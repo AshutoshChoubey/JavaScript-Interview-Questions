@@ -1,9 +1,26 @@
-function xyz() {
+// function xyz() {
    
-    console.log(a); 
-    console.log(b);
+//     console.log(a); 
+//     console.log(b);
    
-    let a = 10
-    var b = 20
-}
-xyz();
+//     let a = 10
+//     var b = 20
+// }
+// xyz();
+// excution context
+// this
+// referece type
+// closer
+// object , array , function prototype
+function init() {
+    name = 'Mozilla2'; // name is a local variable created by init
+  return  function displayName() { // displayName() is the inner function, a closure
+      console.log(name); // use variable declared in the parent function
+    }
+    displayName();
+  }
+  name="abc";
+  var funA=init();
+  funA();
+
+ s

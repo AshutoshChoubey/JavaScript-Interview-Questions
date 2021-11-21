@@ -1,9 +1,9 @@
 function main() {
   let arr = [1, 2, 3];
   console.log('Main Started'); // Main Started
-  arr.forEach(async (value) => {
+  arr.forEach(async (value,index,oriArr) => {
     let res = await print(value);
-    console.log(res);
+    console.log(res); //
   });
   console.log('end'); // end
 }
@@ -17,16 +17,6 @@ function print(value) {
 }
 
 main();
-
-
-
-
-
-// Main Started
-// end
-// undefined
-// undefined
-// undefined
 
 
 

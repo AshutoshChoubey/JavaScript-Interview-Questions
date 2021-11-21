@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <div>
+            <input type="text" placeholder="Input" id="input" value="a,b,c,d,e,f" />
+        </div>
+        <div>
+            <input type="button" onclick="showOutput()" value="Submit" />
+        </div>
+        <div>
+            <div>
+                If you Click Submit Buton then out wil be :<span>f,e,d,c,b,a</span>
+            </div>
+        </div>
+    </form>
+    <script>
+        function showOutput() {
+            if (window.Worker) {
+var myWorker=new Worker("worker.js")
+var getInput = document.getElementById("input").value
+myWorker.postMessage(getInput);
+myWorker.onmessage=(data)=>{
+    document.getElementsByTagName("span")[0].innerHTML = data.data;
+}
+
+            } else {
+                var getInput = document.getElementById("input").value
+                var reverse = getInput.split("").reverse().join("");
+                document.getElementsByTagName("span")[0].innerHTML = reverse;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="discription" content="event flow testing">
+    <meta name="keywords" content="evetflow, eventflowtest , event capture, event bubble" />
+    <title>Document</title>
+    <style>
+        #outer {
+            border-color: red;
+            border-width: 3px;
+            border-style: solid;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        #inner {
+            border: 2px solid green;
+            margin: 20px;
+            padding: 20px;
+
+        }
+
+        #middle {
+            border: 2px solid blue;
+            margin: 20px;
+            padding: 20px;
+
+        }
+
+        li#li1 {
+            border-color: violet;
+            border-width: 3px;
+            border-style: solid;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        #li2 {
+            border-color: black;
+            border-width: 3px;
+            border-style: solid;
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        Outer
+        <div id="middle">
+            middle
+            <div id="inner">
+                Inner
+                <li id="li1">
+                    List1
+                </li>
+                <button style="background-color: greenyellow;" id="button1">
+                    button
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <div id="showData"> </div>
+    <script>
+        window.document.getElementById("outer").addEventListener("click",()=>{
+            // e.stopPropagation();
+            document.getElementById("showData").innerHTML="outer Clicked"
+            console.log("outer Clicked");
+        });
+        window.document.getElementById("middle").addEventListener("click",(e)=>{
+           
+            document.getElementById("showData").innerHTML="middle Clicked"
+            console.log("middle Clicked");
+        });
+        window.document.getElementById("inner").addEventListener("click",(e)=>{
+            // e.stopImmediatePropagation();
+            document.getElementById("showData").innerHTML="inner Clicked"
+            console.log("inner Clicked");
+        });
+        window.document.getElementById("button1").addEventListener("click",(e)=>{
+            e.stopImmediatePropagation();
+            document.getElementById("showData").innerHTML="button1 Clicked"
+            console.log("button1 Clicked");
+        });
+        window.document.getElementById("button1").addEventListener("click",(e)=>{
+         // e.stopImmediatePropagation();
+            document.getElementById("showData").innerHTML="button1 Clicked another handler"
+            console.log("button1 Clicked another handler");
+        });
+    </script>
+</body>
+</html>
