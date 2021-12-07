@@ -1,13 +1,13 @@
-// function getAge() {
-//     'use strict';
-//     age = 21;
-//    // console.log(age);
-//   }
+function getAge() {
+    'use strict';
+    age = 21;
+   // console.log(age);
+  }
  
-  //getAge();
-  //console.log(age);
+  getAge();
+  console.log(age);
 
-  //console.log(eval("4*4+2"));
+  console.log(eval("4*4+2"));
   var obj={
       "key1":{
           "1":"vlaue1",
