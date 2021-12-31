@@ -1,11 +1,11 @@
-// const obj = { 1: 'a', 2: 'b', 3: 'c' };
-// const set = new Set([1, 2, 3, 4, 5,2]);
-// console.log(obj);
-// console.log(set);
-// console.log(obj.hasOwnProperty('1'));
-// console.log(obj.hasOwnProperty(1));
-// console.log(set.has('1'));
-// console.log(set.has(1));
+const obj = { 1: 'a', 2: 'b', 3: 'c' };
+const set = new Set([1, 2, 3, 4, 5,2]);
+console.log(obj);
+console.log(set);
+console.log(obj.hasOwnProperty('1'));
+console.log(obj.hasOwnProperty(1));
+console.log(set.has('1'));
+console.log(set.has(1));
 // Given two arrays, return all unique values from both the arrays contained in the third array.
 var arr1=[2,3,"worldgyan","100",5];
 var arr2=[11,2,3,"worldgyan","100",5,7,10,"subscribe"];
